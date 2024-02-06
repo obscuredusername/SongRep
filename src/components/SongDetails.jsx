@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css'; // Import the stylesheet
-import Search from './Song';  // Fix the import statement
+import Search from './Song';
 import Sidebar from './Sidebar';
-import SongDetailTable from './SongDetailTable';  // Change the component name to SongTable
+import SongTable from './SongTable';
 
 const Main = () => {
   const [searchResponse, setSearchResponse] = useState([]);
@@ -24,7 +24,7 @@ const Main = () => {
       <Sidebar />
       <div style={{ flex: 1 }}>
         <Search onSearchResponse={handleSearchResponse} />
-        <SongDetailTable songs={searchResponse} />  {/* Change to SongTable */}
+        <SongTable songs={searchResponse} />
       </div>
     </div>
   );

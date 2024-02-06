@@ -20,34 +20,58 @@ const Sidebar = () => {
   ];
 
   return (
-    <div>
-      <div className="header">
-        <h1>Karaoke Songs</h1>
-      </div>    
+    <div style={styles.sidebar}>
+      <div className="header" style={styles.header}>
+        <h2 style={styles.headerText}>Categories</h2>
+      </div>
       
-      <div className="main-content">
-        <div className="categories">
+      <div className="main-content" style={styles.mainContent}>
+        <div className="categories" style={styles.categories}>
           {categoriesData.map((category, index) => (
-            <div className="category" key={index}>
-              <a href={category.link}>
+            <div className="category" style={styles.category} key={index}>
+              <a href={category.link} style={styles.categoryLink}>
                 {category.title}
               </a>
-              {index === 0 && ( // Example: Adding a list for the first category
-                <ul>
-                  <li>
-                    <a href="#">Male-Female Singers</a>
-                  </li>
-                </ul>
-              )}
             </div>
           ))}
         </div>
       </div>
-      <div className="footer">
-        &copy; 2024 Karaoke Songs
-      </div>
     </div>
   );
+};
+
+const styles = {
+  sidebar: {
+    width: '250px',
+    height: '100%',
+    backgroundColor: '#333',
+    color: '#fff',
+    padding: '10px',
+  },
+  header: {
+    marginBottom: '20px',
+    borderBottom: '1px solid #555',
+  },
+  headerText: {
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    margin: '0',
+  },
+  mainContent: {
+    padding: '10px',
+  },
+  categories: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  category: {
+    marginBottom: '10px',
+  },
+  categoryLink: {
+    color: '#fff',
+    textDecoration: 'none',
+    fontSize: '1rem',
+  },
 };
 
 export default Sidebar;
